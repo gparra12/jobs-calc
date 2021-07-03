@@ -1,17 +1,21 @@
-const express = require("express"); // importing express node module 
-const server = express() // creating the server
-const routes = require("./routes") // importing the routes file
+const express = require("express"); // // importa o node express
+const server = express() // cria o servidor
+const routes = require("./routes") // importa o arquivo de rotas
 
 
-// seting the ejs (Embedded JavaScript)
+// setando o ejs
 server.set("view engine", "ejs")
 
 
-// enabling statics files
+// ativando a pasta de arquivos estáticos
 server.use(express.static("public"))
 
 
-// routes
+// ativando o corpo da request
+server.use(express.urlencoded({extended: true}))
+
+// rotas
 server.use(routes)
 
+// confirmando que o servidor ta on
 server.listen(3000, () => console.log('Servidor está rodando!'))
