@@ -21,8 +21,8 @@
             Você tem 2 horas livres no seu dia
           </span>
           <a href="/profile" id="avatar-profile">
-            <p><%= profile.name %> <span>Ver perfil</span></p>
-            <img src="<%= profile.avatar %> " alt="<%= profile.name %> ">
+            <p> Gui <span>Ver perfil</span></p>
+            <img src="https://avatars.githubusercontent.com/u/62032974?v=4" alt="Gui">
           </a>
         </section>
 
@@ -45,7 +45,7 @@
               Encerrados
             </div>
           </div>
-          <a class="button orange" href="job">
+          <a class="button orange" href="/job">
             <span>
               <img src="/images/plus-24.svg" alt="Novo Job" /> 
             </span>
@@ -88,7 +88,7 @@
               <div class="actions column flex">
                 <p class="sr-only">Ações</p>
                 <a 
-                  href="/job/edit" 
+                  href="/job/<%= job.id %> " 
                   class="button white edit" 
                   title="Editar Job">
                   <img src="/images/edit-24.svg" alt="Editar Job" />
@@ -124,9 +124,9 @@
       </div>
       <form 
         method="post" 
-        action="/job/delete" 
+        action="/job/delete/" 
         id="delete-job"></form>
     </div>
-    <!-- end modal-wrapper -->
+
   </body>
 </html>
